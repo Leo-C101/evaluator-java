@@ -20,6 +20,9 @@ public class Main {
                 System.out.print("Equation: ");
                 String equation = scnr.nextLine();
                 
+                if (equation.isEmpty()) {
+                    continue;
+                }
                 if (equation.equals("exit")) {
                     break;
                 }
@@ -44,7 +47,7 @@ public class Main {
                 }
 
                 try {
-                    System.out.println(Evaluator.evaluate(expr));
+                    System.out.println("Result: " + Evaluator.evaluate(expr));
                 } catch (EvaluatorError e) {
                     System.err.println("evaluator error: " + e.getMessage());
                 }

@@ -18,3 +18,12 @@ mkdir -p out
 javac -d out -sourcepath src src/Main.java
 java -cp out Main
 ```
+
+## Example
+```
+Evaluator
+Enter 'exit' to quit the program
+Equation: 1 + 2 * (2 + 1)
+AST: (1.0 + (2.0 * (2.0 + 1.0)))
+Result: 7.0
+```

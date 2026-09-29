@@ -57,7 +57,6 @@ public class Parser {
     }
 
     private Expr parsePrimary() throws ParserError {
-        
         if (peek().type == TokenType.NUMBER) {
             NumberExpr expr = new NumberExpr(Double.valueOf(peek().value));
             position++;
@@ -67,8 +66,8 @@ public class Parser {
         if (peek().type == TokenType.LPAREN) {
             position++;
             Expr expr = parseExpression();
-            if (peek().type == TokenType.RPAREN) {
-                throw new ParserError("expected '(' to match ')'");
+            if (peek().type != TokenType.RPAREN) {
+                throw new ParserError("expected ')' to match '('");
             }
             position++;
             return expr;
